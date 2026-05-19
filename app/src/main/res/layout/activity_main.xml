@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="Name" />
+        android:text="" />
 
     <TextView
         android:id="@+id/textView"
@@ -38,19 +38,19 @@
             android:id="@+id/radioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Na Rysiance" />
+            android:text="Roslino" />
 
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Na wielkiej Raczy" />
+            android:text="Wszystko" />
 
         <RadioButton
             android:id="@+id/radioButton3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Na wielkiej Ryczerzowej" />
+            android:text="Drapiezna" />
     </RadioGroup>
 
     <TextView
@@ -79,11 +79,11 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/Waga"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:text="Waga" />
 
         <EditText
             android:id="@+id/number"
@@ -105,7 +105,7 @@
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/lista"/>
 
 </LinearLayout>
