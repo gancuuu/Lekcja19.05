@@ -11,6 +11,7 @@ import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
+import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
 
     RadioButton drapiezne;
 
+    Spinner spinner;
+
     CheckBox czy;
 
     @Override
@@ -61,21 +64,23 @@ public class MainActivity extends AppCompatActivity {
         ryba= new ArrayList<>();
         arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,ryba);
         nazwa = findViewById(R.id.text8);
-        group = findViewById(R.id.group);
+        //group = findViewById(R.id.group);
         seekBar = findViewById(R.id.seekBar);
         button = findViewById(R.id.dodaj);
         numb = findViewById(R.id.number);
 
-        roslino = findViewById(R.id.radioButton);
-        wszystko = findViewById(R.id.radioButton2);
-        drapiezne = findViewById(R.id.radioButton3);
+        spinner = findViewById(R.id.spinner);
+
+        //roslino = findViewById(R.id.radioButton);
+        //wszystko = findViewById(R.id.radioButton2);
+        //drapiezne = findViewById(R.id.radioButton3);
         lista.setAdapter(arrayAdapter);
 
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String radioWynik;
+                //String radioWynik;
                 boolean sprawdz = czy.isChecked();
                 String czyy;
                 if(sprawdz ==true){
@@ -87,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
                 int dlugosc = seekBar.getProgress() + 1;
 
-                if(roslino.isChecked()){
+                /*if(roslino.isChecked()){
                     radioWynik = "Roslino";
                 }
                 else if(wszystko.isChecked()){
@@ -95,9 +100,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else{
                     radioWynik = "Drapiezne";
-                }
+                }*/
 
-                String wynik = "Nazwa " + nazwa.getText().toString() + ", Sposob " + radioWynik + ", Długość " + dlugosc+ ", Czy okres ochronny " + czyy + ", Waga "+ numb.getText().toString();
+                String wynik = "Nazwa " + nazwa.getText().toString() + ", Sposob " + spinner.getSelectedItem() + ", Długość " + dlugosc+ ", Czy okres ochronny " + czyy + ", Waga "+ numb.getText().toString();
                 ryba.add(wynik);
                 arrayAdapter.notifyDataSetChanged();
             }
