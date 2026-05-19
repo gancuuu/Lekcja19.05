@@ -3,6 +3,7 @@ package com.onaar.myapplication;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -12,6 +13,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -47,7 +49,11 @@ public class MainActivity extends AppCompatActivity {
 
     Spinner spinner;
 
+    ListView listView2;
+
     CheckBox czy;
+
+    String tryb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,14 +74,27 @@ public class MainActivity extends AppCompatActivity {
         seekBar = findViewById(R.id.seekBar);
         button = findViewById(R.id.dodaj);
         numb = findViewById(R.id.number);
+        listView2 = findViewById(R.id.lista2);
 
-        spinner = findViewById(R.id.spinner);
+        //spinner = findViewById(R.id.spinner);
 
         //roslino = findViewById(R.id.radioButton);
         //wszystko = findViewById(R.id.radioButton2);
         //drapiezne = findViewById(R.id.radioButton3);
         lista.setAdapter(arrayAdapter);
+        String []odzywianie = new String[]{
+                    "Roslinozerne",
+                    "wszytsko",
+                    "drapiezne"
+        };
+        listView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                tryb=odzywianie[position];
 
+
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,7 +121,9 @@ public class MainActivity extends AppCompatActivity {
                     radioWynik = "Drapiezne";
                 }*/
 
-                String wynik = "Nazwa " + nazwa.getText().toString() + ", Sposob " + spinner.getSelectedItem() + ", Długość " + dlugosc+ ", Czy okres ochronny " + czyy + ", Waga "+ numb.getText().toString();
+
+
+                String wynik = "Nazwa " + nazwa.getText().toString() + ", Sposob " + tryb + ", Długość " + dlugosc+ ", Czy okres ochronny " + czyy + ", Waga "+ numb.getText().toString();
                 ryba.add(wynik);
                 arrayAdapter.notifyDataSetChanged();
             }

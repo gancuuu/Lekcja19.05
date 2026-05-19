@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">My Application</string>
     <array name="spin"><item>Roslino</item><item>Wszystko</item><item>Drapiezne</item></array>
+
 </resources>

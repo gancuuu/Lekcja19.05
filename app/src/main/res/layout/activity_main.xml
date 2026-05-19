@@ -54,10 +54,16 @@
     </RadioGroup> !-->
 
 
-    <Spinner
+    <!--<Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:entries="@array/spin"/>!-->
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lista2"
         android:entries="@array/spin"/>
 
     <TextView
