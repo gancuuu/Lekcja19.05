@@ -1,6 +1,10 @@
 package com.onaar.myapplication;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.SeekBar;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +13,20 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+
+    EditText editText;
+
+    RadioGroup group;
+
+    SeekBar seekBar;
+
+    Button button;
+
+    EditText numb;
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +38,10 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        editText = findViewById(R.id.text8);
+        group = findViewById(R.id.group);
+        seekBar = findViewById(R.id.seekBar);
+        button = findViewById(R.id.dodaj);
+        numb = findViewById(R.id.number);
     }
 }
