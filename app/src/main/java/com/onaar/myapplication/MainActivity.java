@@ -1,8 +1,10 @@
 package com.onaar.myapplication;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 
@@ -11,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +27,13 @@ public class MainActivity extends AppCompatActivity {
     Button button;
 
     EditText numb;
+
+    ListView lista;
+
+    ArrayList<String> ryba;
+
+    ArrayAdapter<String> arrayAdapter;
+
 
 
 
